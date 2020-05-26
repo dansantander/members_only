@@ -11,10 +11,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    if current_user
+      @post =  current_user.posts.new(post_params) 
+    end
 
     if @post.save
-      redirect_to new_user_path
+      redirect_to new_post_path
     else
       render :new
     end
@@ -35,9 +37,5 @@ class PostsController < ApplicationController
     end
 
   end
-
-
-
-
 
 end

@@ -3,8 +3,12 @@
 <ul id="articles">
   <% @posts.each do |post| %>
     <li>
-    <%= link_to post.title, post_path(post) %>
-
-    </li>
+    <%= link_to post.title, post_path(post) %><br />
+    <% if user_signed_in?  && post.user.member_status %>
+      <small>
+        <%= link_to post.user.name, post_path(post) %>
+      </small>
+    <% end %>
   <% end %>
+    </li>
 </ul>
