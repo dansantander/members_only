@@ -20,11 +20,10 @@ In this project we demonstrate authentication using Devise framework
   - Enter the project folder => `cd members_only`
   - Start the server => `rails server`
   - Head over to your server on localhost:3000
-  - create a new user using the signup form, check the checkbox that says 'become a member?'.
-  - create another user using the signup form, this time leave the checkbox that says 'become a member?' unchecked.
-
-  - sign in with the user that ticked the checkbox and head over to `localhost:3000/posts/new` and create as many posts as required
-  - preferably open another tab in your browser and also sign in with the second user that unchecked the 'become a member?' checkbox
+  - Create a new user using the signup form, check the checkbox that says 'become a member?'.
+  - Create another user using the signup form, this time leave the checkbox that says 'become a member?' unchecked.
+  - Sign in with the user that ticked the checkbox and head over to `localhost:3000/posts/new` and create as many posts as required
+  - Preferably open another tab in your browser and also sign in with the second user that unchecked the 'become a member?' checkbox
   - To confirm the `members-only` authentication, you'll see that the user A that checked the box will be able to see the authors of each post right below it's title
   while
   user B that has the box unchecked will not be able to see the authors of each post.
