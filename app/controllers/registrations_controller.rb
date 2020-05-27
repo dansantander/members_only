@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  attr_accessor :name, :members_only
+  attr_accessor :name, :member_status
 
   private
 
