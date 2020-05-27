@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   include PostsHelper
-  # before_action :require_login, only: [:index, :create]
+  before_action :authenticate_user!, only: %i[new create]
 
   def index
     @posts = Post.all
@@ -11,31 +11,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    if current_user
-      @post =  current_user.posts.new(post_params) 
-    end
+    @post = current_user.posts.new(post_params) if current_user
 
     if @post.save
-      redirect_to new_post_path
+      redirect_to posts_path
     else
       render :new
     end
   end
-
-  def edit
-    @post = Post.find(params[:id])
-
-  end
-  
-  def update
-    @post = Post.find(params[:id])
-
-    if @post.update
-      redirect_to new_user_path
-    else
-      render :new
-    end
-
-  end
-
 end

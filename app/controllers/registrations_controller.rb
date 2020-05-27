@@ -6,7 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up_params
     params.require(:user)
       .permit(
-
         :name,
         :email,
         :member_status,
@@ -18,7 +17,6 @@ class RegistrationsController < Devise::RegistrationsController
   def acount_update_params
     params.require(:user)
       .permit(
-
         :name,
         :email,
         :member_status,
