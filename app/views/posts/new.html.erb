@@ -1,7 +1,7 @@
 <%= form_for (@post), :url => posts_path do |f| %>
 
-  title: <%= f.text_field :title %><br/>
+  Title: <%= f.text_field :title %><br/>
   Body: <%= f.text_area :body %><br/>
 
-  <%= f.submit "CreatePost"%>
+  <%= f.submit "CreatePost", :class => 'btn'%>
 <% end %>

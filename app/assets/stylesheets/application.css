@@ -14,6 +14,33 @@
  *= require_self
  */
 
- .link {
-   margin-right: 5px;
- }
+ body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+h1 {
+  color: #336fcb
+}
+
+h2 {
+  color: #e14b7a
+}
+
+.link {
+  margin-right: 5px;
+}
+
+.btn {
+  background-color: #336fcb;
+  color: #fff;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #336fcb;
+  padding: 2px 4px;
+  margin-top: 20px;
+}
