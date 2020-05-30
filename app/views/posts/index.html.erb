@@ -1,14 +1,15 @@
-<h1>All posts here</h1>
+<h2>Members are saying:</h2>
 
-<ul id="articles">
+<ul class="posts">
   <% @posts.each do |post| %>
     <li>
     <%= link_to post.title, post_path(post) %><br />
     <% if (user_signed_in? && current_user.member_status == true) %>
       <small>
-        <%= post.user.name %>
+        Written by <%= post.user.name %>
       </small>
     <% end %>
   <% end %>
     </li>
 </ul>
+

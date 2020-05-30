@@ -17,22 +17,58 @@
  body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin: 0 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-h1 {
-  color: #336fcb
+a {
+  text-decoration: none;
+  color: #159b58;
 }
 
-h2 {
-  color: #e14b7a
+nav {
+  background-color: #336fcb;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
 }
 
-.link {
+h1, h2 {
+  color: #336fcb;
+}
+
+.currentuser {
+  background-color:#60a7d6;
+  color: #fff;
+  height: 30px;
+  font-size: 10px;
+  padding: 1px 10px;
+  margin-bottom: 10px;
+}
+.logotext {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.sharedlink {
+  color: #e14b7a;
+  font-weight: 600;
+
+}
+
+.linktext {
+  color: #fff;
+  font-weight: 600;
   margin-right: 5px;
+  margin: 0 6px;
 }
 
 .btn {
@@ -42,5 +78,16 @@ h2 {
   border-style: solid;
   border-color: #336fcb;
   padding: 2px 4px;
-  margin-top: 20px;
+  margin: 20px 0;
 }
+
+.posts {
+  background-color: rgb(245, 245, 245);
+  list-style-type: none;
+  padding: 20px 10px;
+}
+
+.posts li {
+  margin: 10px 0;
+}
+

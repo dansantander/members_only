@@ -13,16 +13,32 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <div class = "link">
-    <%= link_to "Sign up", new_user_registration_path  %>
-  </div>
+  <nav>
+    <div class="logo">
+      <h1 class = "logotext"> Members Only</h1>
+    </div>
+    <div class = "links">
+      <p>  Wanna know who said that? </p>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'linktext' %>
+        <p> or </p>
+        <%= link_to "Sign In", new_user_session_path, :class => 'linktext'%>
 
-  <div class = "link">
-    <%= link_to "Sign In", new_user_session_path %>
-  </div>
+        <% if (user_signed_in? && current_user.member_status == true) %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linktext'  %>
+        <% end %>
+      </div>
+  </nav>
 
-  <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-
+  <% if (user_signed_in? && current_user.member_status == true) %>
+    <div class = "currentuser">
+      <h3>Welcome back, <%= current_user.name %>!</h3>
+    </div>
+  <% end %>
+  
     <%= yield %>
+
+  <% if (user_signed_in? && current_user.member_status == true) %>
+    <%= link_to "Create a Post", new_post_path, :class => 'sharedlink' %>
+  <% end %>
   </body>
 </html>
