@@ -3,13 +3,11 @@
 <ul class="posts">
   <% @posts.each do |post| %>
     <li>
-    <%= link_to post.title, post_path(post) %><br />
-    <% if (user_signed_in? && current_user.member_status == true) %>
-      <small>
-        Written by <%= post.user.name %>
-      </small>
-    <% end %>
-  <% end %>
+      <h3><%= post.title %></h3>
+        <% if (user_signed_in? && current_user.member_status == true) %>
+          <small>Written by <%= post.user.name %></small>
+        <% end %>
     </li>
+  <% end %>
 </ul>
 

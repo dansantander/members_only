@@ -18,13 +18,15 @@
       <h1 class = "logotext"> Members Only</h1>
     </div>
     <div class = "links">
-      <p>  Wanna know who said that? </p>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'linktext' %>
-        <p> or </p>
-        <%= link_to "Sign In", new_user_session_path, :class => 'linktext'%>
-
+    
         <% if (user_signed_in? && current_user.member_status == true) %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linktext'  %>
+        <% else %>
+          <p>  Wanna know who said that? </p>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'linktext' %>
+          <p> or </p>
+          <%= link_to "Sign In", new_user_session_path, :class => 'linktext'%>
+
         <% end %>
       </div>
   </nav>
