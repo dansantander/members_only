@@ -1,0 +1,13 @@
+<h2>Members are saying:</h2>
+
+<ul class="posts">
+  <% @posts.each do |post| %>
+    <li>
+      <h3><%= post.title %></h3>
+        <% if (user_signed_in? && current_user.member_status == true) %>
+          <small>Written by <%= post.user.name %></small>
+        <% end %>
+    </li>
+  <% end %>
+</ul>
+
